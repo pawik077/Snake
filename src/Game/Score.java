@@ -10,11 +10,11 @@ import javax.swing.JPanel;
 
 public class Score extends JPanel {
 
-	public static final int PANEL_WIDTH = 500;
+	public static final int PANEL_WIDTH = 600;
 	public static final int PANEL_HEIGHT = 100;
 
     private final Font FONT;
-	private final String SCORE_LABEL = "SCORE:";
+	private final String SCORE_LABEL = "SCORE: ";
 	private String score;
 
 	public Score() {
@@ -28,7 +28,7 @@ public class Score extends JPanel {
     public void addPoints(int newPoints) {
 		int oldScore = Integer.parseInt(score);
 		int newScore = oldScore + newPoints;
-		score = oldScore + "";
+		score = newScore + "";
 		repaint();
 	}
 
@@ -45,6 +45,6 @@ public class Score extends JPanel {
 		g.setPaint(Color.GREEN);
 		g.drawString(SCORE_LABEL, 15, 32);
 		g.setPaint(Color.BLUE);
-		g.drawString(score, 105, 32);
+		g.drawString(score, 120, 32);
 	}
 }

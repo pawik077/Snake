@@ -17,7 +17,7 @@ public class Snake {
 	public static final int YSIZE = 20;
 	
 	private Field field;
-	// private ScorePanel scorePanel;
+	private Score score;
 	private List<Rectangle2D.Double> snakeParts;
 	private Direction direction;
 
@@ -37,9 +37,9 @@ public class Snake {
 
     
 
-    public Snake(Field field/*, ScorePanel scorePanel*/) {
+    public Snake(Field field, Score score) {
 		this.field = field;
-		// this.scorePanel = scorePanel;
+		this.score = score;
 		initDefaults();
 	}
 
@@ -69,7 +69,7 @@ public class Snake {
 		Rectangle2D.Double head = snakeParts.get(0);
 		Food apple = field.getFood();
 		
-		// Collision withitself
+		// Collision with itself
 		for (int i = 1; i < snakeParts.size(); i++) {
 			if (head.getMinX() == snakeParts.get(i).getMinX()
 					&& head.getMinY() == snakeParts.get(i).getMinY()) {
@@ -81,7 +81,7 @@ public class Snake {
 		// new food
 		if (head.getMinX() == apple.getShape().getMinX()
 				&& head.getMinY() == apple.getShape().getMinY()) {
-			//scorePanel.addPoints(10);
+			score.addPoints(10);
 			apple.newPosition(this);
 			snakeParts.add(back);
 		}

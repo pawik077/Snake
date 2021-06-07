@@ -17,7 +17,7 @@ public class Food {
 		return new Rectangle2D.Double(x, y, XSIZE, YSIZE);
 	}
 
-    private double generateRandom() {
+    public static double generateRandom() {
         double d = XSIZE * YSIZE + 1;
 		while (d >= XSIZE * YSIZE || d % XSIZE != 0 || d % YSIZE != 0) {
 			d = Math.random() * 1000;
