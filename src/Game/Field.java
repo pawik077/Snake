@@ -19,7 +19,6 @@ public class Field extends JPanel {
         init();
     }
     public void init() {
-        food = new Food(100,100);
         snakeParts = new ArrayList<>();
         snakeParts.add(new Rectangle2D.Double(260,260,20,20));
         snakeParts.add(new Rectangle2D.Double(260,280,20,20));
